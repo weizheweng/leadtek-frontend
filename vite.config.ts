@@ -7,12 +7,16 @@ export default defineConfig({
   plugins: [
     react(),
     checker({
-      terminal: false,
+      terminal: true,
       overlay: {
         initialIsOpen: false,
       },
-      typescript: true,
+      typescript: {
+        root: './',
+        buildMode: true,
+      },
       eslint: {
+        useFlatConfig: true,
         lintCommand: 'eslint ./**/*.{ts,tsx}',
       },
     }),
