@@ -7,6 +7,7 @@ import love from 'eslint-config-love';
 import reactPlugin from 'eslint-plugin-react';
 import tsParser from '@typescript-eslint/parser';
 import stylistic from '@stylistic/eslint-plugin';
+import importPlugin from 'eslint-plugin-import';
 
 export default tseslint.config(
   { ignores: ['dist'] },
@@ -37,8 +38,43 @@ export default tseslint.config(
       '@typescript-eslint': tseslint.plugin,
       react: reactPlugin,
       '@stylistic': stylistic,
+      'import': importPlugin,
     },
     rules: {
+      // ===== Import 相關規則 =====
+      'import/order': [
+        'warn',
+        {
+          'pathGroups': [
+            {
+              'pattern': 'react',
+              'group': 'builtin',
+              'position': 'before'
+            },
+            {
+              'pattern': '~/**',
+              'group': 'external',
+              'position': 'after'
+            }
+          ],
+          'pathGroupsExcludedImportTypes': ['react'],
+          'groups': [
+            'builtin',
+            'external',
+            'internal',
+            'unknown',
+            'parent',
+            'sibling',
+            'index',
+            'object',
+            'type'
+          ],
+          'alphabetize': {
+            'order': 'asc'
+          },
+          'newlines-between': 'always'
+        }
+      ],
       // ===== React 相關規則 =====
       'react/react-in-jsx-scope': 'off',
       'react/prop-types': 'off',
