@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "concurrently \"vite\" \"nodemon --quiet --watch src --ext ts,tsx --exec 'tsc --noEmit --pretty --listFiles --project tsconfig.json && eslint src --ext .ts,.tsx --format stylish'\"",
+    "dev": "concurrently \"vite\" \"nodemon --quiet --watch src --ext ts,tsx --exec 'tsc --noEmit --pretty --listFiles && eslint src --ext .ts,.tsx --format stylish'\"",
     "build": "tsc -b && vite build",
     "lint": "eslint . --fix --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
