@@ -169,6 +169,76 @@ export default tseslint.config(
         },
       ],
       '@stylistic/type-annotation-spacing': 'error',
+      '@stylistic/comma-spacing': ['error', {
+        before: false,
+        after: true
+      }],
+      '@stylistic/array-bracket-spacing': ['error', 'never'],
+      '@stylistic/arrow-spacing': ['error', {
+        before: true,
+        after: true
+      }],
+      '@stylistic/block-spacing': ['error', 'always'],
+      '@stylistic/brace-style': ['error', '1tbs', {
+        allowSingleLine: true
+      }],
+      '@stylistic/comma-style': ['error', 'last'],
+      '@stylistic/dot-location': ['error', 'property'],
+      '@stylistic/eol-last': ['error', 'always'],
+      '@stylistic/func-call-spacing': ['error', 'never'],
+      '@stylistic/key-spacing': ['error', {
+        beforeColon: false,
+        afterColon: true
+      }],
+      '@stylistic/keyword-spacing': ['error', {
+        before: true,
+        after: true
+      }],
+      '@stylistic/linebreak-style': ['error', 'unix'],
+      '@stylistic/max-len': ['error', {
+        code: 100,
+        ignoreComments: true,
+        ignoreUrls: true,
+        ignoreStrings: true,
+        ignoreTemplateLiterals: true
+      }],
+      '@stylistic/multiline-ternary': ['error', 'always-multiline'],
+      '@stylistic/new-parens': 'error',
+      '@stylistic/no-mixed-spaces-and-tabs': 'error',
+      '@stylistic/no-multi-spaces': 'error',
+      '@stylistic/no-multiple-empty-lines': ['error', {
+        max: 1,
+        maxEOF: 0
+      }],
+      '@stylistic/no-trailing-spaces': 'error',
+      '@stylistic/no-whitespace-before-property': 'error',
+      '@stylistic/object-curly-spacing': ['error', 'always'],
+      '@stylistic/object-property-newline': ['error', {
+        allowAllPropertiesOnSameLine: true
+      }],
+      '@stylistic/operator-linebreak': ['error', 'after'],
+      '@stylistic/padded-blocks': ['error', 'never'],
+      '@stylistic/quote-props': ['error', 'as-needed'],
+      '@stylistic/quotes': ['error', 'single'],
+      '@stylistic/rest-spread-spacing': ['error', 'never'],
+      '@stylistic/semi-spacing': ['error', {
+        before: false,
+        after: true
+      }],
+      '@stylistic/space-before-blocks': ['error', 'always'],
+      '@stylistic/space-in-parens': ['error', 'never'],
+      '@stylistic/space-unary-ops': ['error', {
+        words: true,
+        nonwords: false
+      }],
+      '@stylistic/spaced-comment': ['error', 'always'],
+      '@stylistic/template-curly-spacing': ['error', 'never'],
+      '@stylistic/template-tag-spacing': ['error', 'never'],
+      '@stylistic/wrap-iife': ['error', 'outside'],
+      '@stylistic/yield-star-spacing': ['error', {
+        before: false,
+        after: true
+      }],
 
       // ===== 其他規則 =====
       'no-console': [
