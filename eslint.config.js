@@ -76,6 +76,7 @@ export default tseslint.config(
           'distinctGroup': true
         }
       ],
+      
       // ===== React 相關規則 =====
       'react/react-in-jsx-scope': 'off',
       'react/prop-types': 'off',
@@ -191,6 +192,7 @@ export default tseslint.config(
           object: true
         }
       }],
+
       // ===== 程式碼風格規則 (使用 @stylistic) =====
       '@stylistic/indent': ['error', 2],
       '@stylistic/space-before-function-paren': ['error', 'always'],
@@ -292,6 +294,7 @@ export default tseslint.config(
         before: false,
         after: true
       }],
+      '@stylistic/max-len': 'off',
 
       // ===== 其他規則 =====
       'no-console': [
