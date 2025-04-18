@@ -1,4 +1,4 @@
-import { BarChart } from '@mui/x-charts/BarChart'
+import { BarChart as MuiBarChart } from '@mui/x-charts/BarChart'
 
 import { COLORS } from '../constants/color'
 
@@ -8,9 +8,9 @@ interface BarChartProps {
   memory: number,
 }
 
-export function BarChartComponent ({ cpu, disk, memory }: BarChartProps) {
+export function BarChart ({ cpu, disk, memory }: BarChartProps) {
   return (
-    <BarChart
+    <MuiBarChart
       series={[
         { data: [cpu], label: 'CPU Usage', valueFormatter: (value) => `${value?.toFixed(2)}%` },
         { data: [disk], label: 'Disk Usage', valueFormatter: (value) => `${value?.toFixed(2)}%` },

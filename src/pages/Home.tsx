@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from 'react'
 
 import { Box, ToggleButtonGroup, ToggleButton, Typography, Stack } from '@mui/material'
 
-import { BarChartComponent } from '../ChartComponents/BarChart'
+import { BarChart } from '../ChartComponents/BarChart'
 import { GaugeChart } from '../ChartComponents/GaugeChart'
 import { LineChart } from '../ChartComponents/LineChart'
 import { useWebSocket } from '../hooks/useWebSocket'
@@ -80,7 +80,7 @@ export function Home () {
             />
           )}
           {chartType === 'bar' && (
-            <BarChartComponent
+            <BarChart
               cpu={systemStatsData.cpu.usage}
               disk={systemStatsData.disk.usage}
               memory={systemStatsData.memory.usage}
