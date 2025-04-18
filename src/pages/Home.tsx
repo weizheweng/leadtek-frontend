@@ -1,10 +1,8 @@
 import { useEffect, useState, useRef } from 'react'
 
 import { Box, ToggleButtonGroup, ToggleButton, Typography, Stack } from '@mui/material'
+import { BarChart, GaugeChart, LineChart } from 'leadtek-chart-components'
 
-import { BarChart } from '../ChartComponents/BarChart'
-import { GaugeChart } from '../ChartComponents/GaugeChart'
-import { LineChart } from '../ChartComponents/LineChart'
 import { useWebSocket } from '../hooks/useWebSocket'
 import { safeJsonParse } from '../utils/safeJsonParse'
 
@@ -45,7 +43,8 @@ export function Home () {
     })
   }, [data, systemStatsData])
 
-  const handleChartTypeChange = (_: React.MouseEvent<HTMLElement>, newChartType: ChartType) => {
+  const handleChartTypeChange = (_: React.MouseEvent<HTMLElement>, newChartType: ChartType | null) => {
+    if (!newChartType) return
     setChartType(newChartType)
   }
 
