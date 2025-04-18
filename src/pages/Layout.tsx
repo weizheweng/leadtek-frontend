@@ -6,7 +6,13 @@ export function Layout () {
   return (
     <Box
       bgcolor={grey[200]}
-      sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', minWidth: '100vw', overflowX: 'scroll' }}
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        height: '100vh',
+        width: '100vw',
+        overflow: 'auto',
+      }}
     >
       <Outlet />
     </Box>
