@@ -72,7 +72,8 @@ export default tseslint.config(
           'alphabetize': {
             'order': 'asc'
           },
-          'newlines-between': 'always'
+          'newlines-between': 'always',
+          'distinctGroup': true
         }
       ],
       // ===== React 相關規則 =====
@@ -128,6 +129,11 @@ export default tseslint.config(
         },
       ],
 
+      // ===== Eslint 相關規則 =====
+      'eslint-comments/require-description': ['error', {
+        ignore: ['eslint-disable-next-line'],
+      }],
+
       // ===== TypeScript 相關規則 =====
       '@typescript-eslint/explicit-function-return-type': 'off',
       '@typescript-eslint/no-non-null-assertion': 'error',
@@ -173,7 +179,18 @@ export default tseslint.config(
         },
       ],
       '@typescript-eslint/no-use-before-define': 'error',
-
+      '@typescript-eslint/no-unsafe-type-assertion': 'off',
+      '@typescript-eslint/no-unnecessary-type-parameters': 'off',
+      '@typescript-eslint/prefer-destructuring': ['warn', {
+        VariableDeclarator: {
+          array: false,
+          object: true
+        },
+        AssignmentExpression: {
+          array: false,
+          object: true
+        }
+      }],
       // ===== 程式碼風格規則 (使用 @stylistic) =====
       '@stylistic/indent': ['error', 2],
       '@stylistic/space-before-function-paren': ['error', 'always'],
