@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react'
 
-import { Box, ToggleButtonGroup, ToggleButton, Typography, Stack } from '@mui/material'
+import { Box, ToggleButtonGroup, ToggleButton, Typography, Stack, CircularProgress } from '@mui/material'
 import { BarChart, GaugeChart, LineChart } from 'leadtek-chart-components'
 
 import { useWebSocket } from '../hooks/useWebSocket'
@@ -68,32 +68,37 @@ export function Home () {
           </ToggleButton>
         </ToggleButtonGroup>
       </Stack>
-
-      {systemStatsData && (
-        <Box sx={{ mt: 2 }}>
-          {chartType === 'line' && (
-            <LineChart
-              cpuData={cpuHistory}
-              diskData={diskHistory}
-              memoryData={memoryHistory}
-            />
-          )}
-          {chartType === 'bar' && (
-            <BarChart
-              cpu={systemStatsData.cpu.usage}
-              disk={systemStatsData.disk.usage}
-              memory={systemStatsData.memory.usage}
-            />
-          )}
-          {chartType === 'gauge' && (
-            <GaugeChart
-              cpu={systemStatsData.cpu.usage}
-              disk={systemStatsData.disk.usage}
-              memory={systemStatsData.memory.usage}
-            />
-          )}
-        </Box>
-      )}
+      {systemStatsData ?
+        (
+          <Box sx={{ mt: 2 }}>
+            {chartType === 'line' && (
+              <LineChart
+                cpuData={cpuHistory}
+                diskData={diskHistory}
+                memoryData={memoryHistory}
+              />
+            )}
+            {chartType === 'bar' && (
+              <BarChart
+                cpu={systemStatsData.cpu.usage}
+                disk={systemStatsData.disk.usage}
+                memory={systemStatsData.memory.usage}
+              />
+            )}
+            {chartType === 'gauge' && (
+              <GaugeChart
+                cpu={systemStatsData.cpu.usage}
+                disk={systemStatsData.disk.usage}
+                memory={systemStatsData.memory.usage}
+              />
+            )}
+          </Box>
+        ) :
+        (
+          <Stack justifyContent="center" alignItems="center" sx={{ mt: 4 }}>
+            <CircularProgress />
+          </Stack>
+        )}
     </Box>
   )
 }
