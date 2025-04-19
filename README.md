@@ -1,54 +1,37 @@
-# React + TypeScript + Vite
+# SystemMonitor
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+SystemMonitor 是一個用於監控系統資源使用率的應用程式，可以即時顯示 CPU、磁碟和記憶體的使用情況。
 
-Currently, two official plugins are available:
+## 系統需求
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Node.js 20 或更高版本
+- pnpm 9 或更高版本
 
-## Expanding the ESLint configuration
+## 安裝步驟
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. 確保已安裝 Node.js 18.0.0 或更高版本
+2. 安裝 pnpm 9.0.0：
+   ```bash
+   npm install -g pnpm@9
+   ```
+3. 安裝專案依賴：
+   ```bash
+   pnpm install
+   ```
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 功能特點
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- 即時監控 CPU 使用率
+- 顯示磁碟使用情況
+- 監控記憶體使用率
+- 直觀的圖形化介面
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 開發
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+# 啟動開發伺服器
+pnpm dev
+
+# 建置專案
+pnpm build
 ```
