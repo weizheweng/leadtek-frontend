@@ -9,12 +9,11 @@ SystemMonitor 是一個用於監控系統資源使用率的應用程式，可以
 
 ## 安裝步驟
 
-1. 確保已安裝 Node.js 18.0.0 或更高版本
-2. 安裝 pnpm 9.0.0：
+1. 安裝 pnpm 9.0.0：
    ```bash
    npm install -g pnpm@9
    ```
-3. 安裝專案依賴：
+2. 安裝專案依賴：
    ```bash
    pnpm install
    ```
@@ -34,4 +33,24 @@ pnpm dev
 
 # 建置專案
 pnpm build
+
+# 執行 lint 檢查
+pnpm lint
+```
+
+## 環境變數
+
+專案使用以下環境變數：
+
+- `VITE_API_URL`: API 服務的基礎 URL
+- `VITE_APP_TITLE`: 應用程式標題
+
+## 專案結構
+
+```
+src/
+├── pages/         # 頁面組件
+├── hooks/         # 自定義 React Hooks
+├── utils/         # 工具函數
+└── types/         # TypeScript 類型定義
 ```
